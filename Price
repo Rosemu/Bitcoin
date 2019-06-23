@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Jun 22 22:26:20 2019
+
+@author: modatta
+"""
+
+# Get the current price of Bitcoin in USD using the coindesk.com API with Python and the Requests HTTP Library
+
+import requests
+btc=requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+print(btc.status_code)
+print(btc.headers['content-type'])
+print(btc.encoding)
+print(btc.text)
+print(btc.json()['bpi']['USD']['rate'])
